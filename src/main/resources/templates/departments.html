@@ -8,37 +8,35 @@
             <div class="col">
                 <div class="card">
                     <div class="card-header">
-                        <h3>Customers</h3>
+                        <h3>Departments</h3>
                     </div>
                     <table class="table table-striped">
                         <thead>
                         <tr>
                             <th>Id</th>
+                            <th>Name</th>
                             <th>Code</th>
-                            <th>FirstName</th>
-                            <th>LastName</th>
-                            <th>Address</th>
+                            <th>Country</th>
                             <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr th:each="customer : ${customers}">
-                            <td th:text="${customer.id}"></td>
-                            <td th:text="${customer.code}"></td>
-                            <td th:text="${customer.firstName}"></td>
-                            <td th:text="${customer.lastName}"></td>
-                            <td th:text="${customer.address}"></td>
+                        <tr th:each="dep : ${departments}">
+                            <td th:text="${dep.id}"></td>
+                            <td th:text="${dep.name}"></td>
+                            <td th:text="${dep.code}"></td>
+                            <td th:text="${dep.country}"></td>
                             <td>
                                 <a class="btn btn-outline-danger"
-                                   th:href="@{'/customer/delete?id=' + ${customer.id}}"
+                                   th:href="@{'/department/delete?id=' + ${dep.id}}"
                                 >Delete</a>
                             </td>
                         </tr>
                         </tbody>
                     </table>
-                    <a class="btn btn-primary"
-                       th:href="@{/customer/save-customer}"
-                    >Create Customer</a>
+                    <a class="btn btn-primary my-3"
+                       th:href="@{/department/create-department}"
+                    >Create Department</a>
                 </div>
             </div>
         </div>
